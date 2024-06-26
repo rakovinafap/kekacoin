@@ -7,7 +7,7 @@ bot.start((ctx) => {
     ctx.reply('Нажмите кнопку для открытия Tapalka!', {
         reply_markup: {
             inline_keyboard: [
-                [{ text: 'Открыть Tapalka', web_app: { url: 'http://localhost:3000/' } }]
+                [{ text: 'Открыть Tapalka', web_app: { url: 'https://kekacoin.vercel.app/' } }]
                 // Замените URL на ваш HTTPS URL или ngrok URL для локального тестирования
             ]
         }

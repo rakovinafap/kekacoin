@@ -7,20 +7,55 @@
   font-family: Arial, sans-serif;
 }
 
-.circle {
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -15px) rotate(-12deg); }
+  20% { transform: translate(-3px, 0px) rotate(12deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(15px, -12px) rotate(12deg); }
+  50% { transform: translate(-11px, 22px) rotate(-12deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(31px, 1px) rotate(-1deg); }
+  80% { transform: translate(-11px, -11px) rotate(1deg); }
+  90% { transform: translate(1px, 21px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes float {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image {
   width: 100px;
   height: 100px;
-  border-radius: 50%;
-  background-color: #3498db;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  object-fit: cover;
   cursor: pointer;
   margin-bottom: 20px;
 }
 
-.circle:hover {
-  background-color: #2980b9;
+.image.shake {
+  animation: shake 0.5s; /* Длительность анимации */
+  animation-timing-function: ease-in-out;
+}
+
+.floater {
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(255, 248, 248);
+  animation: float 1s ease-out;
 }
 
 p {
